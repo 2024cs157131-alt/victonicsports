@@ -863,10 +863,10 @@ function VipTab({ packages, vipTips, vipReady, lastBuy, onPurchase }: {
                     <div key={p.duration} onClick={() => setSelected(prev => ({...prev, [pkg.id]: {duration:p.duration, amount:p.amount}}))}
                       style={{
                         display:'flex', justifyContent:'space-between', alignItems:'center',
-                        background: C.darkBackground, borderRadius:8, padding:'8px 12px',
+                        background: sel?.duration===p.duration ? '#0A1A0A' : C.darkBackground,
+                        borderRadius:8, padding:'8px 12px',
                         cursor:'pointer',
                         border:`1.5px solid ${sel?.duration===p.duration ? C.scoresGreen : 'transparent'}`,
-                        background: sel?.duration===p.duration ? '#0A1A0A' : C.darkBackground,
                       }}>
                       <span style={{ color:C.muted, fontSize:12, fontWeight:600 }}>{dlabel[p.duration] ?? p.duration}</span>
                       <span style={{ color:C.scoresGreen, fontWeight:700, fontSize:14 }}>${p.amount}</span>
@@ -1527,7 +1527,7 @@ export default function App({ initialFixtures, support, testMode }: {
 
   return (
     <div style={{ background: C.darkBackground, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {support.showFullContent !== false && <Header visible={headerVis} />}
+      <Header visible={headerVis} />
 
       <div ref={scrollRef} onScroll={onScroll}
         style={{ flex: 1, overflowY: 'auto', paddingBottom: 60 }}>
