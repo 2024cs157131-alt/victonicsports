@@ -12,6 +12,8 @@ export const COLORS = {
   timeRed:        '#D32F2F',
   goldColor:      '#FFD700',
   purpleColor:    '#AB47BC',
+  muted:          '#9E9E9E',
+  border:         '#2C2F38',
 }
 
 // ── League priorities (exact from app) ───────────────────────────────────────
